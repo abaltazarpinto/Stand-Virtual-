@@ -1,0 +1,247 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Stand Virtual II</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="stand_virtual/assets/css/main.css" />
+	<script src="stand_virtual/assets/js/carro.js"></script>
+	<script src="stand_virtual/assets/js/funcoes.js"></script>
+
+	
+</head>
+
+<body class="no-sidebar is-preload">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<section id="header" class="wrapper">
+
+			<!-- Logo -->
+			<div id="logo">
+				<h1>Stand Virtual</h1>
+			</div>
+
+		</section>
+
+		<!-- Main -->
+		<div id="main" class="wrapper style2">
+			<div class="title">Adicionar Carro</div>
+			<div class="container">
+
+				<!-- Content -->
+				<div id="content">
+					<div id="formulario">
+						<form name="formulario_carro" >
+							<h1>Inserir novo Automóvel</h1>
+							<dl>
+								<dt>
+									<label for="marca_carro">Marca:</label>
+								</dt>
+								<dd>
+									<select name="marca_carro" id="marca_carro">
+									</select>
+								</dd>
+
+								<dt>
+									<label for="modelo_carro">Modelo:</label>
+								</dt>
+								<dd>
+									<input type="text" name="modelo_carro">
+								</dd>
+
+								<dt>
+									<label for="ano_fabrico">Ano de Fabrico:</label>
+								</dt>
+								<dd>
+
+									<select name="ano_fabrico">
+										<script>
+											for (let i = new Date().getFullYear(); i >= 1990; i--) {
+												document.write(`<option value="${i}">${i}</option>`);
+											}
+										</script>
+									</select>
+								</dd>
+								<dt>
+									<label for="mes_fabrico">Mes de Fabrico:</label>
+								</dt>
+								<dd>
+
+									<select name="mes_fabrico">
+										<script>
+											for (let i = 1; i <= 12; i++) {
+												document.write(`<option value="${i}">${i}</option>`)
+											}
+										</script>
+									</select>
+								</dd>
+								<dt>
+
+									<label for="cor_carro">Cor:</label>
+								</dt>
+								<dd>
+									<select name="cor_carro">
+										<option value="Branco">Branco</option>
+										<option value="Preto">Preto</option>
+										<option value="Cinzento">Cinzento</option>
+										<option value="Azul">Azul</option>
+										<option value="Vermelho">Vermelho</option>
+										<option value="Verde">Verde</option>
+										<option value="Amarelo">Amarelo</option>
+										<option value="Laranja">Laranja</option>
+									</select>
+								</dd>
+								<dt>
+									<label for="combustivel_carro">Combustivel:</label>
+								</dt>
+								<dd>
+									<select name="combustivel_carro">
+										<option value="gasolina">Gasolina</option>
+										<option value="diesel">Diesel</option>
+									</select>
+								</dd>
+
+								<dt>
+									<label for="numero_cavalos">Numero de Cavalos:</label>
+								</dt>
+								<dd>
+									<input type="number" name="numero_cavalos">
+								</dd>
+
+								<dt>
+									<label for="kilometros_carro">Numero de Kilometros:</label>
+								</dt>
+								<dd>
+									<input type="number" name="kilometros_carro">
+								</dd>
+
+								<dt>
+									<label for="preco_carro">Preço:</label>
+								</dt>
+								<dd>
+									<input type="number" name="preco_carro">
+								</dd>
+
+								<dd>
+									<input type="button" value="Inserir Automóvel"  onclick="criarNovoCarro()">
+								</dd>
+
+							
+
+							</dl>
+
+						</form>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Highlights -->
+		<section id="highlights" class="wrapper style1">
+			<div class="title">Filtros </div>
+			<div class="container">
+				<div id="content">
+					<div id="formulario">
+						<form action="" name="formularioFiltrar">
+							<dl>
+								<dt>
+									<label for="marcaCarro">Marca:</label>
+								</dt>
+								<dd>
+									<input type="text" name="marcaCarro">
+								</dd>
+
+								<dt>
+									<label for="modeloCarro">Modelo:</label>
+								</dt>
+								<dd>
+									<input type="text" name="modeloCarro">
+								</dd>
+
+								<dt>
+									<label for="anoFabrico">Ano de Fabrico:</label>
+								</dt>
+								<dd>
+									<select name="anoFabrico">
+										<option value="">--Ano--</option>
+										<script>
+											for (let i = new Date().getFullYear(); i >= 1990; i--) {
+												document.write(`<option value="${i}">${i}</option>`)
+											}
+										</script>
+									</select>
+								</dd>
+								<dt>
+
+									<label for="corCarro">Cor:</label>
+								</dt>
+								<dd>
+									<select name="corCarro">
+										<option value="">--Cor--</option>
+										<option value="Branco">Branco</option>
+										<option value="Preto">Preto</option>
+										<option value="Cinzento">Cinzento</option>
+										<option value="Azul">Azul</option>
+										<option value="Vermelho">Vermelho</option>
+										<option value="Verde">Verde</option>
+										<option value="Amarelo">Amarelo</option>
+										<option value="Laranja">Laranja</option>
+									</select>
+								</dd>
+								<dt>
+									<label for="combustivel">Combustivel:</label>
+								</dt>
+								<dd>
+									<select name="combustivelCarro">
+										<option value="">--Combustivel--</option>
+										<option value="gasolina">Gasolina</option>
+										<option value="diesel">Diesel</option>
+									</select>
+								</dd>
+								<dt>
+									<label for="venda">Venda:</label>
+								</dt>
+								<dd>
+									<select name="vendaCarro">
+										<option value="">--Venda--</option>
+										<option value="stand">Stand</option>
+										<option value="particular">Particular</option>
+									</select>
+								</dd>
+								<dd>
+									<input type="button" value="Filtrar" onclick="filtrar()">
+								</dd>
+
+							</dl>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Highlights -->
+		<section id="highlights" class="wrapper style3">
+			<div class="title">Loja </div>
+			<div class="container">
+				<div class="row aln-center">
+				</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer" class="wrapper">
+			<div id="copyright">
+				<ul>
+				</ul>
+			</div>
+	</div>
+	</section>
+
+	</div>
+
+
+</body>
+
+</html>
